@@ -1,8 +1,12 @@
-from flask import Flask
-import requests
+from flask import Flask, Blueprint
+from routes.popular import popular_bp
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app=Flask(__name__)
-
+app.register_blueprint(popular_bp)
 
 if __name__=="__main__":
     app.run(debug=True)
