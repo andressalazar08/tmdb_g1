@@ -1,2 +1,3 @@
 .env
 /entorno_peliculas
+__pycache__
