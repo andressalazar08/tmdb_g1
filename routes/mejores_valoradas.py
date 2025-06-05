@@ -10,7 +10,7 @@ mejores_valoradas_bp = Blueprint("mejores_valoradas", __name__)
 
 @mejores_valoradas_bp.route("/mejores_valoradas")
 def mejores_valoradas():
-    url = f"https://api.themoviedb.org/3/movie/top_rated?api_key={API_KEY}&language=es-ES"
+    url = f"https://api.themoviedb.org/3/movie/top_rated?api_key={API_KEY}&language=es-ES&page=1"
     response = requests.get(url)
     datos = response.json()["results"]
     return render_template("mejores_valoradas.html", datos=datos)
