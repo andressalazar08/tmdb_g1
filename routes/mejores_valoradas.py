@@ -6,9 +6,9 @@ from dotenv import load_dotenv
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 
-mejoresvaloradas_bp = Blueprint("mejores_valoradas", __name__)
+mejores_valoradas_bp = Blueprint("mejores_valoradas", __name__)
 
-@mejoresvaloradas_bp.route("/mejores_valoradas")
+@mejores_valoradas_bp.route("/mejores_valoradas")
 def mejores_valoradas():
     url = f"https://api.themoviedb.org/3/movie/top_rated?api_key={API_KEY}&language=es-ES&page=1"
     response = requests.get(url)
