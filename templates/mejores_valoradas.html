@@ -8,3 +8,8 @@
     {% for pelicula in datos %}
         <h1>Titulo de la pelicula: {{ pelicula.title }}</h1>
         <h2>Valoracion: {{ pelicula.vote_average }}<h2>
+    <img src="https://image.tmdb.org/t/p/w200{{ pelicula.poster_path }}" alt="{{ pelicula.title }}">
+    {% endfor %}
+</body>
+</html>
+    
