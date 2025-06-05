@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Listado de peliculas mejor valoradas</title>
+</head>
+<body>
+    {% for pelicula in datos %}
+        <h1>Titulo de la pelicula: {{ pelicula.title }}</h1>
+        <h2>Valoracion: {{ pelicula.vote_average }}<h2>
