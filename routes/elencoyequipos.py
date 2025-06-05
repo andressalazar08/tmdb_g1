@@ -6,11 +6,13 @@ from dotenv import load_dotenv
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 
-popular_bp = Blueprint("elencoyequipos", __name__)
+credits_bp = Blueprint("elencoyequipos", __name__)
 
-@popular_bp.route("/elencoyequipos")
-def popular():
-    url = f"https://api.themoviedb.org/3/movie/550/credits?api_key=API_KEY&language=es-ES"
+@credits_bp.route("/credits")
+def credits():
+    url = f"https://api.themoviedb.org/3/movie/550/credits?api_key={API_KEY}&language=es-ES"
     response = requests.get(url)
-    datos = response.json()["results"]
-    return render_template("elencoyequipos.html", datos=datos)
+    datos = response.json()
+    cast = datos.get("cast")
+    crew = datos.get("crew")
+    return render_template("elencoyequipos.html", cast=cast, crew=crew)
