@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+.tarjeta {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    gap: 30px
+}
+
+.tarjeta-imagen img {
+    width: 250px;
+    border-radius: 10px;
+}
+
+.contenido-targeta {
+    flex: 1;
+}
