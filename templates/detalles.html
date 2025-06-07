@@ -6,9 +6,15 @@
     <title>Detalles de peliculas por id</title>
 </head>
 <body>
-    {% for id in datos  %}
+    <h1>BUSCAR DETALLES DE PELICULAS POR ID</h1>
+    <form method="POST">
+        <input type="number" placeholder="Ingrese el id" name="id" required>
+        <button type="submit">BUSCAR</button>
+    </form>
 
-        
-    {% endfor %}
+    {{ datos }}
+    <table>
+ 
+</table>
 </body>
 </html>
