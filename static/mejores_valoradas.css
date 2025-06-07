@@ -1,0 +1,35 @@
+body{
+    background-color: gray;
+    font-family: sans-serif;
+
+}
+
+
+h1{
+
+    color: rgba(34, 84, 177, 0.685);
+    font-family:'Times New Roman', Times, serif; 
+
+}
+
+h2{
+
+    color:darkcyan;
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+
+h3{
+
+    color: aqua;        
+    font-family:'Times New Roman', Times, serif
+
+}
+
+h4{
+    
+    color: darkturquoise;
+    font-family: 'Times New Roman', Times, serif;
+
+}
