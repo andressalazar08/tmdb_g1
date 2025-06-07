@@ -12,6 +12,7 @@ buscar_bp = Blueprint("buscar_pelicula", __name__)
 
 # Ruta para mostrar el formulario y buscar películas
 @buscar_bp.route("/buscar_pelicula", methods=["GET", "POST"])
+
 def buscar_peliculas():
     datos = []  # Creamos una lista vacía para los resultados
 
@@ -22,7 +23,7 @@ def buscar_peliculas():
             url = f"https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&query={consulta}&language=es-ES"
             response = requests.get(url)
 
-            # Si la respuesta fue exitosa (código 200)
+            # Si la respuesta fue exitosa (código 200 todo salio ok)
             if response.status_code == 200:
                 datos = response.json().get("results", [])
 
