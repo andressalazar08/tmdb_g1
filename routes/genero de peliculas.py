@@ -1,0 +1,30 @@
+import os
+import requests
+from flask import Blueprint, render_template
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
+
+genero_de_peliculas_bp = Blueprint("genero_de_peliculas", __name__)
+
+@genero_de_peliculas_bp.route("/genero_de_peliculas")
+def genero_de_peliculas():
+    url = f"https://api.themoviedb.org/3/movie/genero_de_peliculas?api_key={API_KEY}&language=es-ES"
+    print(url)
+    response = requests.get(url)
+    print(response)
+    id=requests.form.get("id")
+    genero_de_peliculas=[
+    {"id":15,"name":"Acción"},{"id":12,"name":"Aventura"},{"id":16,"name":"Animación"},{"id":35,"name":"Comedia"},{"id":80,"name":"Crimen"},{"id":99,"name":"Documental"},{"id":18,"name":"Drama"},{"id":10751,"name":"Familia"},{"id":14,"name":"Fantasía"},{"id":36,"name":"Historia"},{"id":27,"name":"Terror"},{"id":10402,"name":"Música"},{"id":9648,"name":"Misterio"},{"id":10749,"name":"Romance"},{"id":878,"name":"Ciencia ficción"},{"id":10770,"name":"Película de TV"},{"id":53,"name":"Suspense"},{"id":10752,"name":"Bélica"},{"id":37,"name":"Western,"}
+    ]
+    print(genero_de_peliculas.values())=[]
+    datos = response.json()["results"]
+    print(datos)
+    return render_template("genero_pelicula.html", datos=datos)
+
+    genero_de_peliculas=[
+    {"id":15,"name":"Acción"},{"id":12,"name":"Aventura"},{"id":16,"name":"Animación"},{"id":35,"name":"Comedia"},{"id":80,"name":"Crimen"},{"id":99,"name":"Documental"},{"id":18,"name":"Drama"},{"id":10751,"name":"Familia"},{"id":14,"name":"Fantasía"},{"id":36,"name":"Historia"},{"id":27,"name":"Terror"},{"id":10402,"name":"Música"},{"id":9648,"name":"Misterio"},{"id":10749,"name":"Romance"},{"id":878,"name":"Ciencia ficción"},{"id":10770,"name":"Película de TV"},{"id":53,"name":"Suspense"},{"id":10752,"name":"Bélica"},{"id":37,"name":"Western,"}
+    ]
+
+    print(genero_de_peliculas.values())=[]
