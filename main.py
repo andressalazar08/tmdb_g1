@@ -1,6 +1,6 @@
 from flask import Flask, Blueprint
 from routes.popular import popular_bp
-from routes.elencoyequipos import credits_bp
+from routes.elenco_y_equipos import credits_bp
 import os
 from dotenv import load_dotenv
 
