@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ datos.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='detalles_una_serie.css') }}">
+</head>
+<body>
+    <div class="tarjeta">
+        <div class="tarjeta-imagen img">
+            <img src="https://image.tmdb.org/t/p/w200{{ datos.poster_path }}" alt="{{ datos.name }}">
+        </div>
+        <div class="contenido-tarjeta">
+        <h1>{{ datos.name }}</h1>
+        {% if datos.genres %}
+            <p><strong>Generos:</strong>
+                {% for genero in datos.genres %}
+                    {{ genero.name }}
+                {% endfor %}
+            </p>
+        {% endif %} 
+        <p><strong>Puntuacion:</strong> {{ datos.vote_average }}</p>
+        <p><strong>Total de votos:</strong> {{ datos.vote_count }}</p>
+        <h3><em>{{ datos.tagline }}</em></h3>
+        <p>{{ datos.overview }}</p>
+        {% if datos.created_by %}
+            <p><strong>Creadores:</strong>
+                {% for creador in datos.created_by %}
+                    {{ creador.name }}
+                {% endfor %}
+            </p>
+        {% endif %}
+        <p><strong>Primera emision:</strong> {{ datos.first_air_date }}</p>
+        <p><strong>Ultima emision:</strong> {{ datos.last_air_date }}</p>
+        <p><strong>Estado:</strong> {{ datos.status }}</p>
+        <p><strong>Temporadas:</strong> {{ datos.number_of_seasons }}</p>
+        <p><strong>Total de episodios:</strong> {{ datos.number_of_episodes }}</p>
+        {% if datos.languages %}
+            <p><strong>Idiomas disponibles:</strong>
+                {% for lenguaje in datos.languages %}
+                    {{ lenguaje }}
+                {% endfor %}
+            </p>
+        {% endif %}
+        {% if datos.networks %}
+            <p><strong>Emitido por:</strong>
+                {% for network in datos.networks %}
+                    {{ network.name }}
+                {% endfor %}
+            </p>
+        {% endif %}
+        </div>
+    </div>
+</body>
+</html>
