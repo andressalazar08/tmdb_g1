@@ -1,62 +1,113 @@
-/* buscar_pelicula.css */
-
-/* Estilo general del body */
+/* =========================
+   Estilos globales del cuerpo
+   ========================= */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-    padding: 20px;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente legible y moderna */
+    background-color: #f0f2f5; /* Color de fondo gris claro */
+    color: #333; /* Texto gris oscuro para buen contraste */
+    margin: 0;  /* Elimina márgenes por defecto */
+    padding: 20px; /* Espaciado interno general */
 }
 
-/* Título principal */
+/* =========================
+   Contenedor principal centrado
+   ========================= */
+.container {
+    max-width: 1000px; /* Limita el ancho para evitar que se vea muy expandido en pantallas grandes */
+    margin: 0 auto;    /* Centra el contenido horizontalmente */
+}
+
+/* =========================
+   Título principal
+   ========================= */
 h1 {
-    text-align: center;
-    color: #2c3e50;
+    text-align: center;  /* Centra el texto del título */
+    color: #222;         /* Color del título */
+    margin-bottom: 40px; /* Espacio debajo del título */
 }
 
-/* Estilo del formulario */
+/* =========================
+   Estilo para el formulario de búsqueda
+   ========================= */
 form {
-    text-align: center;
-    margin-bottom: 30px;
+    display: flex;            /* Muestra los elementos del formulario en una sola línea */
+    justify-content: center; /* Centra horizontalmente los inputs y botón */
+    margin-bottom: 30px;     /* Espacio debajo del formulario */
 }
 
+/* =========================
+   Campo de entrada de texto
+   ========================= */
 input[type="text"] {
-    padding: 10px;
-    width: 300px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 16px;
+    padding: 10px;               /* Espaciado interno */
+    width: 300px;                /* Ancho del campo */
+    font-size: 16px;             /* Tamaño de letra */
+    border: 1px solid #ccc;      /* Borde gris claro */
+    border-radius: 4px 0 0 4px;  /* Bordes redondeados solo a la izquierda */
+    outline: none;               /* Elimina el borde azul al hacer clic */
 }
 
+/* =========================
+   Botón de búsqueda
+   ========================= */
 button {
-    padding: 10px 20px;
-    margin-left: 10px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
+    padding: 10px 15px;        /* Espaciado interno */
+    background-color: #007BFF;/* Color azul principal */
+    color: white;              /* Texto blanco */
+    border: none;              /* Sin borde */
+    font-size: 16px;           /* Tamaño de letra */
+    cursor: pointer;           /* Muestra la mano al pasar por encima */
+    border-radius: 0 4px 4px 0;/* Bordes redondeados solo a la derecha */
+    transition: background-color 0.3s; /* Transición suave al cambiar de color */
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
 }
 
-/* Contenedor de los resultados */
-h2 {
-    margin-top: 40px;
-    text-align: center;
-    color: #34495e;
+/* =========================
+   Tarjeta de cada película
+   ========================= */
+.pelicula {
+    background-color: white; /* Fondo blanco para destacar la tarjeta */
+    border-radius: 8px;      /* Esquinas redondeadas */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Sombra suave para profundidad */
+    margin: 20px auto;       /* Espacio entre tarjetas y centradas */
+    padding: 20px;           /* Espacio interno */
+    display: flex;           /* Coloca la imagen y texto en fila */
+    gap: 20px;               /* Espacio entre imagen y texto */
+    align-items: center;     /* Centra verticalmente los elementos */
+    max-width: 800px;        /* Máximo ancho para la tarjeta */
 }
 
-div {
-    text-align: center;
+/* =========================
+   Imagen de la película
+   ========================= */
+.pelicula img {
+    border-radius: 5px; /* Bordes redondeados a la imagen */
+    width: 100px;       /* Tamaño fijo de ancho */
 }
 
-/* Estilo de la imagen */
-img {
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
+/* =========================
+   Contenedor de la info textual de la película
+   ========================= */
+.pelicula .info {
+    flex: 1; /* Ocupa todo el espacio disponible restante */
+}
+
+/* =========================
+   Título de la película
+   ========================= */
+.pelicula .info h2 {
+    margin: 0 0 10px; /* Sin margen superior, 10px abajo */
+    color: #333;      /* Gris oscuro */
+}
+
+/* =========================
+   Descripción de la película
+   ========================= */
+.pelicula .info p {
+    margin: 0;         /* Elimina márgenes por defecto */
+    font-size: 14px;   /* Tamaño de letra más pequeño para descripción */
+    color: #666;       /* Gris medio para el texto */
 }
