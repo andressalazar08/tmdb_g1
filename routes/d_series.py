@@ -20,13 +20,15 @@ def series():
 @series_bp.route("/buscar_series")
 def buscar_series():
     query = request.args.get("query")
+    page = request.args.get("page", 1)
     if not query:
-        return render_template("d_series.html", datos=[])
+        return {"results": []}
     
-    url = f"https://api.themoviedb.org/3/search/tv?api_key={API_KEY}&language=es-ES&query={query}"
+    url = f"https://api.themoviedb.org/3/search/tv?api_key={API_KEY}&language=es-ES&query={query}&page={page}"
     response = requests.get(url)
     datos = response.json().get("results", [])
-    return render_template("d_series.html", datos=datos)
+    return {"results": datos}
+
 
 
 
