@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='mejores_valoradas.css')}}">
 </head>
 <body>
+    
     {% for pelicula in datos %}
-        <h1>Titulo de la pelicula: {{ pelicula.title }}</h1>
-        <h2>Valoracion: {{ pelicula.vote_average }}</h2>
+        <h1>{{ pelicula.title }}</h1>
+        <h2>{{ pelicula.vote_average }}*</h2>
         <h3>Cantidad de Votos: {{pelicula.vote_count}}</h3>
-        <h4>Fecha de lanzamiento: {{ pelicula.release_date }}</h4>
+        <h4>{{ pelicula.release_date }}</h4>
         <img src="https://image.tmdb.org/t/p/w200{{ pelicula.poster_path }}" alt="{{ pelicula.title }}">
     {% endfor %}
 </body>

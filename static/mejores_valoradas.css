@@ -1,7 +1,12 @@
 body{
     background-color: gray;
     font-family: sans-serif;
-
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    text-align: center;
+    
 }
 
 
@@ -9,6 +14,7 @@ h1{
 
     color: rgba(34, 84, 177, 0.685);
     font-family:'Times New Roman', Times, serif; 
+    
 
 }
 
@@ -16,20 +22,25 @@ h2{
 
     color:darkcyan;
     font-family: 'Times New Roman', Times, serif;
-
-
+  
 }
 
 h3{
 
     color: aqua;        
-    font-family:'Times New Roman', Times, serif
-
+    font-family:'Times New Roman', Times, serif;
+    
 }
 
 h4{
     
     color: darkturquoise;
     font-family: 'Times New Roman', Times, serif;
+    
+}
+
+img{
+    border-radius: 8px;
+
 
 }
