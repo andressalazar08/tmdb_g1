@@ -1,0 +1,40 @@
+body {
+    background-color:darkgrey;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+form {
+    display: center;
+}
+input {
+    display: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+button {
+    background-color: aquamarine;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.datos-container img {
+    font-family: fantasy;
+    padding-left: 620px;
+    padding-right: 620px;
+    border-radius: 30px;
+    margin-top: 30px;
+    
+}
+
+.datos-container {
+    color:rgb(7, 88, 26);
+    text-align: center;
+}

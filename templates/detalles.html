@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles de peliculas por id</title>
+    <link rel="stylesheet" href="static/detalles.css">
 </head>
 <body>
     <h1>BUSCAR DETALLES DE PELICULAS POR ID</h1>
@@ -11,10 +12,13 @@
         <input type="number" placeholder="Ingrese el id" name="id" required>
         <button type="submit">BUSCAR</button>
     </form>
-
-    {{ datos }}
-    <table>
- 
-</table>
+<div class="datos-container">
+    <img src="https://image.tmdb.org/t/p/w200{{ datos.poster_path }}" alt="datos">
+    <span>{{datos.original_title}}</span>
+    {% for generos in datos.genres %}
+    <span>{{generos.name}}</span>
+    {% endfor %}
+    <span>{{datos.overview}}</span>
+</div> 
 </body>
 </html>

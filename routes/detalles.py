@@ -18,10 +18,11 @@ def detalles():
             response = requests.get(url)
             print(response)
             datos = response.json()
-            
+            if datos:
+                return render_template("detalles.html", datos=datos)
     # if "genres" in response_json:
     #     datos = response_json["genres"]
     # else:
     #     datos = []  # Manejar el error apropiadamente
     
-    return render_template("detalles.html", datos=datos)
+    return render_template("detalles.html")
