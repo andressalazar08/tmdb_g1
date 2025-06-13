@@ -7,12 +7,15 @@
 </head>
 <body>
     
+    <div class="movie-gallery">
     {% for pelicula in datos %}
+        <div class="movie-card">
         <h1>{{ pelicula.title }}</h1>
         <h2>{{ pelicula.vote_average }}*</h2>
         <h3>Cantidad de Votos: {{pelicula.vote_count}}</h3>
         <h4>{{ pelicula.release_date }}</h4>
         <img src="https://image.tmdb.org/t/p/w200{{ pelicula.poster_path }}" alt="{{ pelicula.title }}">
+        </div>
     {% endfor %}
 </body>
 </html>
