@@ -5,32 +5,23 @@
     <title>Buscar Películas</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='buscar_pelicula.css') }}">
 </head>
-<body>
-    <h1>Buscador de Películas</h1>
+<<body>
+    <div class="container">
+        <h1>Buscar Películas</h1>
 
-    <!-- Formulario para buscar -->
-    <form method="POST">
-        <input type="text" name="consulta" placeholder="Escribe el nombre de una película" required>
-        <button type="submit">Buscar</button>
-    </form>
+        <form method="POST">
+            <input type="text" name="consulta" placeholder="Escribe el nombre de una película..." required>
+            <button type="submit">Buscar</button>
+        </form>
 
-    <hr>
-
-    {% if datos %}
-        <h2>Resultados:</h2>
         {% for pelicula in datos %}
-            <div style="margin-bottom: 20px;">
-                <h3>{{ pelicula.title }}</h3>
-                {% if pelicula.poster_path %}
-                    <img src="https://image.tmdb.org/t/p/w200{{ pelicula.poster_path }}" alt="{{ pelicula.title }}">
-                {% else %}
-                    <p>[Sin imagen disponible]</p>
-                {% endif %}
+            <div class="pelicula">
+                <img src="https://image.tmdb.org/t/p/w200{{ pelicula.poster_path }}" alt="{{ pelicula.title }}">
+                <div class="info">
+                    <h2>{{ pelicula.title }}</h2>
+                    <p>{{ pelicula.overview }}</p>
+                </div>
             </div>
         {% endfor %}
-    {% elif datos is defined %}
-        <p>No se encontraron resultados para ese término.</p>
-    {% endif %}
+    </div>
 </body>
-
-</html>
