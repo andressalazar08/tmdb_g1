@@ -10,6 +10,13 @@
 
         <h1>Titulo de la pelicula: {{ pelicula.title }}</h1>
         <img src="https://image.tmdb.org/t/p/w200{{ pelicula.poster_path }}" alt="{{ pelicula.title }}">
+        <p>{{pelicula.original_title}}</p>
+        <p>{{pelicula.overview}}</p>
+        <p>{{pelicula.original_language}}</p>
+        <p>{{pelicula.release_date}}</p>
+        <p>{{pelicula.popularity}}</p>
+        <p>{{pelicula.genre_ids}}</p>
+        <p>{{pelicula.id}}</p>
     {% endfor %}
 </body>
 </html>
