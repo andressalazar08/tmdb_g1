@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EncaSeries</title>
+    <link rel="stylesheet" href="/static/d_series.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+<!-- NOMBRE WEB -->
+    
+    <div class="sidebar" id="sidebar">
+        <div class="header">
+            <div class="menu-btn" id="menu-btn">
+            <i class="bx bx-chevron-left"></i>
+            </div>
+
+            <div class="brand">
+            <img src="{{ url_for('static', filename='logomundo.png') }}" alt="logo" style="height: 32px;">
+
+            <span>SERIESWORLD</span>
+            </div>
+
+        </div>
+
+
+<!-- BUSCADOR -->
+<div class="menu-container">
+                <div class="search">
+                    <i class="bx bx-search" id="search-icon"></i>
+                    <input type="search" id="search-input" placeholder="Buscar series...">
+                </div>
+
+
+<!-- FIJOS PARTE1 -->
+<ul class="menu">
+                    <li class="menu-item menu-item-static active ">
+                        <a href="/series" class="menu-link" >
+                        <i class="bx bx-home-alt-2"></i>
+                        <span>Home</span>
+                        </a>
+                    </li>
+
+
+<!-- MENU ABATIBLE - SUBMENUS DE PLATAFORMAS -->                    
+<li class="menu-item menu-item-dropdown ">
+                    <a href="#" class="menu-link" >
+                        <i class='bx bx-movie-play'></i> 
+                        <span>Plataformas</span>
+                        <i class="bx bx-chevron-down"></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="sub-menu-link"data-provider="8" >Netflix</a></li>
+                        <li><a href="#" class="sub-menu-link"data-provider="337" >Disney</a></li>
+                        <li><a href="#" class="sub-menu-link"data-provider="350" >Apple TV+</a></li>
+                        <li><a href="#" class="sub-menu-link"data-provider="531" >Paramount+</a></li>
+                        <li><a href="#" class="sub-menu-link"data-provider="1899" >MAX</a></li>
+                        <li><a href="#" class="sub-menu-link"data-provider="119" >Prime Video</a></li>
+                        <li><a href="#" class="sub-menu-link"data-provider="283" >Crunchyroll</a></li>
+                    </ul>
+</li>
+
+
+
+<!-- MENU ABATIBLE - SUBMENUS DE GENEROS -->
+<li class="menu-item menu-item-dropdown ">
+                    <a href="#" class="menu-link" >
+                        <i class='bx  bx-heart-circle'></i> 
+                        <span>Generos</span>
+                        <i class="bx bx-chevron-down"></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#" class="sub-menu-link"data-genre="10759">Action & Adventure</a></li>
+                        <li><a href="#" class="sub-menu-link"data-genre="16">Animación</a></li>
+                        <li><a href="#" class="sub-menu-link"data-genre="35">Comedia</a></li>
+                        <li><a href="#" class="sub-menu-link"data-genre="80">Crimen+</a></li>
+                        <li><a href="#" class="sub-menu-link"data-genre="99">Documental</a></li>
+                        <li><a href="#" class="sub-menu-link"data-genre="18">Drama</a></li>
+                        <li><a href="#" class="sub-menu-link"data-genre="10762">Kids</a></li>
+                        <li><a href="#" class="sub-menu-link"data-genre="9648">Misterio</a></li>
+                        <li><a href="#" class="sub-menu-link"data-genre="10763">News</a></li>
+                        <li><a href="#" class="sub-menu-link"data-genre="10765">Sci-Fi & Fantasy</a></li>
+                        <li><a href="#" class="sub-menu-link"data-genre="10766">Soap</a></li>
+                        <li><a href="#" class="sub-menu-link"data-genre="10767">Talk</a></li>
+                        <li><a href="#" class="sub-menu-link"data-genre="10768">War & Politics</a></li>
+                        <li><a href="#" class="sub-menu-link"data-genre="37">Western</a></li>
+                        
+                    </ul>
+</li>
+
+
+
+<!-- FIJOS PARTE2 -->
+
+
+<li class="menu-item menu-item-static ">
+    <a href="#" class="menu-link" data-section="popular">
+        <i class="bx bx-star"></i>
+        <span>Popular</span>
+    </a>
+</li>
+
+<li class="menu-item menu-item-static ">
+    <a href="#" class="menu-link" data-section="airing_today">
+        <i class="bx bx-broadcast"></i>
+        <span>Transmitiendo Hoy</span>
+    </a>
+</li>
+
+<li class="menu-item menu-item-static ">
+    <a href="#" class="menu-link" data-section="on_the_air">
+        <i class='bx bx-tv'></i> 
+        <span>En Televisión</span>
+    </a>
+</li>
+
+<li class="menu-item menu-item-static ">
+    <a href="#" class="menu-link" data-section="top_rated">
+        <i class='bx bx-like'></i> 
+        <span>Mejor Calificado</span>
+    </a>
+</li>
+
+
+</ul>
+
+
+</div>
+
+            
+    </div>
+
+
+<!-- INICIO -->
+
+    <script src="{{ url_for('static', filename='d_series.js') }}"></script>
+
+    <h1 id="section-title" style="color: white; text-align: center; margin-top: 1.5rem;">Inicio</h1>
+
+<!-- INFO DE SERIES -->
+    <div class="series-grid" id="series-container">
+        {% for series in datos %}
+
+        <div class="serie-card">
+            
+            <img src="https://image.tmdb.org/t/p/w200{{ series.poster_path }}" alt="{{ series.original_name }}">    
+                <div class="serie-info">
+                <h2>{{ series.original_name }} </h2>
+                <p> 📅Año: {{series.first_air_date}} </p>
+                <p> 🔥Popularidad: {{ series.popularity }} </p>
+
+                </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    
+
+<script>
+let currentProvider = "8"; // Valor por defecto: Netflix
+let currentPage = 1;
+let loading = false;
+
+// Carga más series al hacer scroll
+async function loadMoreSeries() {
+    if (loading) return;
+    loading = true;
+    currentPage += 1;
+
+    const res = await fetch(`/series_por_proveedor?provider=${currentProvider}&page=${currentPage}`);
+    const data = await res.json();
+
+    const container = document.getElementById("series-container");
+
+    data.results.forEach(serie => {
+        const card = document.createElement("div");
+        card.className = "serie-card";
+        card.innerHTML = `
+            <img src="https://image.tmdb.org/t/p/w200${serie.poster_path}" alt="${serie.original_name}">
+            <div class="serie-info">
+                <h2>${serie.original_name}</h2>
+                <p>📅Año: ${serie.first_air_date}</p>
+                <p>🔥Popularidad: ${serie.popularity}</p>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+
+    loading = false;
+}
+
+// Escucha el scroll del usuario
+window.addEventListener("scroll", () => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+        loadMoreSeries();
+    }
+});
+
+// PROVEEDORES -PLATAFORMAS (Netflix, Disney, etc.)
+document.querySelectorAll('.sub-menu-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const providerId = this.dataset.provider;
+        const genreId = this.dataset.genre;
+        const sectionName = this.textContent.trim();
+
+        currentPage = 1;
+        document.getElementById("section-title").textContent = sectionName;
+
+        const container = document.getElementById("series-container");
+        container.innerHTML = '';
+
+        if (providerId) {
+            currentProvider = providerId;
+            fetch(`/series_por_proveedor?provider=${providerId}&page=${currentPage}`)
+                .then(response => response.json())
+                .then(data => {
+                    data.results.forEach(serie => {
+                        const card = document.createElement('div');
+                        card.classList.add('serie-card');
+                        card.innerHTML = `
+                            <img src="https://image.tmdb.org/t/p/w200${serie.poster_path}" alt="${serie.name}">
+                            <div class="serie-info">
+                                <h2>${serie.name}</h2>
+                                <p>📅Año: ${serie.first_air_date || "Desconocido"}</p>
+                                <p>🔥Popularidad: ${serie.popularity}</p>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                });
+        } else if (genreId) {
+            fetch(`/series_por_genero?genre=${genreId}&page=${currentPage}`)
+                .then(response => response.json())
+                .then(data => {
+                    data.results.forEach(serie => {
+                        const card = document.createElement('div');
+                        card.classList.add('serie-card');
+                        card.innerHTML = `
+                            <img src="https://image.tmdb.org/t/p/w200${serie.poster_path}" alt="${serie.name}">
+                            <div class="serie-info">
+                                <h2>${serie.name}</h2>
+                                <p>📅Año: ${serie.first_air_date || "Desconocido"}</p>
+                                <p>🔥Popularidad: ${serie.popularity}</p>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                });
+        }
+    });
+});
+
+</script>
+
+
+
+
+<!-- ACESSO RAPIDOS,POPULAR,TRANSMITIENDO HOY, ETC -->
+<script>
+document.querySelectorAll('.menu-link[data-section]').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const section = this.dataset.section;
+        const sectionName = this.textContent.trim();
+        document.getElementById("section-title").textContent = sectionName;
+
+        let endpoint = "";
+       switch (section) {
+  case "popular":
+    endpoint = "/series_populares";
+    break;
+  case "airing_today":
+    endpoint = "/series_en_tv";
+    break;
+  case "on_the_air":
+    endpoint = "/series_transmitiendo";
+    break;
+  case "top_rated":
+    endpoint = "/series_mejor_calificadas";
+    break;
+}
+
+
+        fetch(`${endpoint}?page=1`)
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById("series-container");
+                container.innerHTML = "";
+                data.results.forEach(serie => {
+                    const card = document.createElement("div");
+                    card.className = "serie-card";
+                    card.innerHTML = `
+                        <img src="https://image.tmdb.org/t/p/w200${serie.poster_path}" alt="${serie.name}">
+                        <div class="serie-info">
+                            <h2>${serie.name}</h2>
+                            <p>Lanzamiento: ${serie.first_air_date || "Desconocido"}</p>
+                            <p>Popularidad: ${serie.popularity}</p>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            })
+            .catch(err => {
+                console.error("Error al cargar sección:", err);
+            });
+    });
+});
+</script>
+
+
+
+
+<!-- BUSCADOR -->
+<script>
+const searchInput = document.getElementById("search-input");
+const searchIcon = document.getElementById("search-icon");
+
+function realizarBusqueda() {
+    const query = searchInput.value.trim();
+    if (query === "") return;
+
+    document.getElementById("section-title").textContent = `Resultados de "${query}"`;
+    currentPage = 1;
+
+    fetch(`/buscar_series?query=${encodeURIComponent(query)}&page=${currentPage}`)
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById("series-container");
+            container.innerHTML = "";
+
+            data.results.forEach(serie => {
+                const card = document.createElement("div");
+                card.className = "serie-card";
+                card.innerHTML = `
+                    <img src="https://image.tmdb.org/t/p/w200${serie.poster_path}" alt="${serie.name}">
+                    <div class="serie-info">
+                        <h2>${serie.name}</h2>
+                        <p>📅Año: ${serie.first_air_date || "Desconocido"}</p>
+                        <p>🔥Popularidad: ${serie.popularity}</p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        })
+        .catch(err => console.error("Error en búsqueda:", err));
+}
+
+searchInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        realizarBusqueda();
+    }
+});
+
+searchIcon.addEventListener("click", function () {
+    realizarBusqueda();
+});
+</script>
+
+
+
+
+</body>
+
+
+
+</html>
