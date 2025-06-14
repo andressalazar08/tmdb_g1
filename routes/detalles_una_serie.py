@@ -21,8 +21,6 @@ def detalles_una_serie_buscar():
 def detalles_una_serie(serie_id):
     url = f"https://api.themoviedb.org/3/tv/{serie_id}?api_key={API_KEY}&language=es-ES"
     response = requests.get(url)
-    if response.status_code==200:
-        datos = response.json()
-        return render_template("detalles_una_serie.html", datos=datos)
-    else:
-        return "No se encontro la serie", 404
+    response.status_code
+    datos = response.json()
+    return render_template("detalles_una_serie.html", datos=datos)
