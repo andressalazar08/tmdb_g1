@@ -3,29 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ datos.name }}</title>
+    <title>Detalles Series</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='detalles_una_serie.css') }}">
 </head>
 <body>
+    <div class="busqueda">
+    <form method="POST" action="{{ url_for('detalles_una_serie_buscar.detalles_una_serie_buscar') }}">
+        <input type="text" name="Buscar" placeholder="Id de la serie">
+        <button type="submit">Buscar</button>
+    </form>
+    </div>
     <div class="tarjeta">
         <div class="tarjeta-imagen img">
             <img src="https://image.tmdb.org/t/p/w200{{ datos.poster_path }}" alt="{{ datos.name }}">
         </div>
         <div class="contenido-tarjeta">
-        <h1>{{ datos.name }}</h1>
+        <h1 class="titulo-serie">{{ datos.name }}</h1>
         {% if datos.genres %}
-            <p><strong>Generos:</strong>
+            <p class="generos">Generos:
                 {% for genero in datos.genres %}
                     {{ genero.name }}
                 {% endfor %}
             </p>
         {% endif %} 
-        <p><strong>Puntuacion:</strong> {{ datos.vote_average }}</p>
+        <p class="puntuacion">Puntuacion: {{ datos.vote_average }}</p>
         <p><strong>Total de votos:</strong> {{ datos.vote_count }}</p>
         <h3><em>{{ datos.tagline }}</em></h3>
-        <p>{{ datos.overview }}</p>
+        <p class="descripcion">{{ datos.overview }}</p>
         {% if datos.created_by %}
-            <p><strong>Creadores:</strong>
+            <p class="creador">
                 {% for creador in datos.created_by %}
                     {{ creador.name }}
                 {% endfor %}
