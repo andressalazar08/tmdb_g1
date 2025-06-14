@@ -60,3 +60,14 @@ img{
     box-shadow: 0 4px 8px;
 
 }
+
+button{
+    display: block;
+    width: 500px;
+    height: auto;
+    padding: 50px;
+    border-radius: 20px;
+    color:darkgray;
+    background-color:dodgerblue;
+    font-size: 30px;
+}
