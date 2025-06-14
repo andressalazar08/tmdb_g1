@@ -1,5 +1,5 @@
 body {
-    background-color:darkgrey;
+    background-color:rgb(170, 166, 166);
     display: flex;
     flex-direction: column;
 }
@@ -7,34 +7,67 @@ body {
 h1 {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
+    color:#25404e;
 }
 
-form {
-    display: center;
+.container {
+    padding-left: 555px;
 }
+
 input {
-    display: center;
     text-align: center;
     padding: 10px;
     border-radius: 15px;
+    font-size: medium;
+    box-shadow: 0 5px #767773;
 }
 
-button {
-    background-color: aquamarine;
-    border-radius: 30px;
-    padding: 10px;
+.button-container {
+    display: flex;
+    justify-content: center;
 }
 
-.datos-container img {
-    font-family: fantasy;
-    padding-left: 620px;
-    padding-right: 620px;
-    border-radius: 30px;
-    margin-top: 30px;
-    
+/* Botones con efecto 3D */
+.nav-button {
+    background: linear-gradient(to bottom, #5b717c, #2f3e49);
+    color: rgb(247, 207, 126);
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 5px #414b54;
+    transition: all 0.2s ease-in-out;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.nav-button:active {
+    box-shadow: 0 2px #0d0d0d;
+    transform: translateY(3px);
+}
+
+.nav-button:hover {
+    filter: brightness(1.2);
 }
 
 .datos-container {
-    color:rgb(7, 88, 26);
+    display: grid;
+    color:rgb(44, 84, 53);
     text-align: center;
+    margin-top: 25px;
+}
+
+.container-title {
+    padding: 5px;
+    font-size: 50px;
+    color:darkslategray;
+}
+
+.container-generos {
+    font-size: 25px;
+    color:rgb(86, 128, 86);
+}
+
+.container-overview {
+    font-size: 20px;
 }
