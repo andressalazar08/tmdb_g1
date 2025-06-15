@@ -4,19 +4,25 @@
 <head>
     <meta charset="UTF-8" />
     <title>próximos estrenos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estrenos.css') }}">
 </head>
 <body>
     {% for pelicula in datos  %}
+<div class="container">
 
-        <h1>Titulo de la pelicula: {{ pelicula.title }}</h1>
-        <img src="https://image.tmdb.org/t/p/w200{{ pelicula.poster_path }}" alt="{{ pelicula.title }}">
-        <p>{{pelicula.original_title}}</p>
-        <p>{{pelicula.overview}}</p>
-        <p>{{pelicula.original_language}}</p>
-        <p>{{pelicula.release_date}}</p>
-        <p>{{pelicula.popularity}}</p>
-        <p>{{pelicula.genre_ids}}</p>
-        <p>{{pelicula.id}}</p>
+        <div class="container-imagen">
+            <h1 class="pelicula"> {{ pelicula.title }}</h1>
+            <img src="https://image.tmdb.org/t/p/w200{{ pelicula.poster_path }}" alt="{{ pelicula.title }}">
+        </div>
+        <div class="container-textos">
+            <p class="titulo"> <span style="color: rgb(255, 102, 1);">Titulo: </span> {{pelicula.original_title}}</p>
+            <p class="descripcion"> <span style="color: rgb(255, 102, 0);"> Descripción: </span> {{pelicula.overview}}</p>
+            <p class="lenguaje"> <span style="color: rgb(255, 102, 0);"> Lenguaje: </span> {{pelicula.original_language}}</p>
+            <p class="fecha"> <span style="color: rgb(255, 102, 0);"> Fecha: </span> {{pelicula.release_date}}</p>
+            <p class="popularidad"> <span style="color: rgb(255, 102, 0);"> Popularidad: </span> {{pelicula.popularity}}</p>
+            
+        </div>
+</div>
     {% endfor %}
 </body>
 </html>
