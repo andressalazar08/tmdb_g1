@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Géneros de Películas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='generos.css') }}">
+</head>
+<body>
+
+    <h1 class="titulo">Géneros de películas</h1>
+
+    <div class="contenedor-generos">
+        {% for genero in datos.genres %}
+        <div class="tarjeta-genero">
+            <div class="imagen-genero">
+                <img src="{{ url_for('static', filename='megustalagasolina.png') }}" alt="Género">
+            </div>
+            <div class="contenido-genero">
+                <h2>{{ genero.name }}</h2>
+                <p>ID: {{ genero.id }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
