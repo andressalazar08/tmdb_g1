@@ -1,5 +1,5 @@
-genero_de_peliculas{
-    font-family:'Times New Roman', Times, serif;
+.body{
+font-family:'Times New Roman', Times, serif;
     background-color: cadetblue;
     display: flex;
     justify-content: center;
@@ -11,7 +11,7 @@ genero_de_peliculas{
 }
 
 
-.bodys{
+.contenedor{
     background-color: cadetblue;
     border-radius:10px;
     max-width:600px;

@@ -2,19 +2,38 @@
 <html>
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="witdh=device-witdh,initial-scale=1.0">
+
     <title>busqueda de peliculas por genero</title>
+    <link rel="stylesheet" href="{{url_for('static',filename ='genero peliculas.css')}}">
 </head>
 <body>
-    <input type="id" name="number" value="{{genero_pelicula.id}}"readnoly> 
-        </h2 style="color:blanchedalmond;">usuario<h2> 
-        <h1>genero la pelicula: {{ pelicula class="id"}}</h1>
-        <button> actualizar genero_pelicula</button>
+    <div class="contenedor">
+    </h2 style="color:blanchedalmond;">id<h2> 
+    <form method="POST">
+    <input type="number" name="id">
+    <button> actualizar genero_pelicula</button>
+    </form> 
+    <table>
+        <tr><th>id</th><th>genero de peliculas</th></tr>
+        <tr>
+            <td>{{  salida.id  }}</td>
+            <td>{{  salida.name }}</td>
+            <td>
+                 <a href="/update/{{ salida.id }}">editar</a>
 
-        <button style="margin-top: 10px;background-color:brown; color:antiquewhite ">
-            <a href="/" style="color:white; text-decoration:none">
-                regresar al home
-            </a>
-        </button>
+                 <a href="/?eliminar={{ salida.name }}">eliminar</a>
+       
+            </td>
+        </tr>
+        
+
+
+
+    </table>     
+  
+ 
+    </div>
    
 
 
