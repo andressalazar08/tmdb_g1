@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Serie</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='detalles_una_serie.css') }}">
+</head>
+<body>
+    <div class="busqueda">
+        <form method="POST">
+            <input type="text" name="Buscar" placeholder="Id de la serie">
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+</body>
+</html>
