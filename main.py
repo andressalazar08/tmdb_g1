@@ -8,6 +8,12 @@ from routes.detalles_una_serie import detalles_una_serie_bp, detalles_una_serie_
 
 from routes.estrenos import estrenos_bp
 
+from routes.detalles import detalles_bp
+
+
+from routes.detalles_una_serie import detalles_una_serie_bp
+from routes.elenco_y_equipos import credits_bp
+
 from routes.buscar_pelicula import buscar_bp # importo
 
 
@@ -29,7 +35,10 @@ app.register_blueprint(detalles_una_serie_bp)
 app.register_blueprint(detalles_una_serie_buscar_bp)
 
 app.register_blueprint(estrenos_bp)
+app.register_blueprint(detalles_bp)
+app.register_blueprint(credits_bp)
 
+app.register_blueprint(detalles_una_serie_bp)
 app.register_blueprint(buscar_bp) # importo la ruta
 
 
