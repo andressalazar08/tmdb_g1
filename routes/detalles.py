@@ -25,4 +25,4 @@ def detalles():
     # else:
     #     datos = []  # Manejar el error apropiadamente
     
-    return render_template("detalles.html")
+    return render_template("detalles.html")#return
