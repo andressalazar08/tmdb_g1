@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Créditos de la película</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='elenco_y_equipos.css') }}">
+</head>
+<body>
+
+    {% if show_form %}
+    <form method="POST" action="{{ url_for('elencoyequipos.search_form') }}" class="search-form">
+        <input type="text" name="movie_id" placeholder="ID de película..." required>
+        <button type="submit">Buscar</button>
+    </form>
+    {% endif %}
+
+    {% if cast or crew %}
+    <h1>Reparto principal ({{ cast_count }} personas)</h1>
+    <div class="credit-list">
+        {% for actor in cast %}
+        <div class="card">
+            {% if actor.profile_path %}
+            <img src="https://image.tmdb.org/t/p/w200/{{ actor.profile_path }}" alt="{{ actor.name }}">
+            {% else %}
+            <img src="{{ url_for('static', filename='placeholder.png') }}" alt="Sin imagen">
+            {% endif %}
+            <div class="name">{{ actor.name }}</div>
+            <div class="role">como {{ actor.character }}</div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Equipo técnico ({{ crew_count }} personas)</h2>
+    <div class="credit-list">
+        {% for member in crew %}
+        <div class="card">
+            {% if member.profile_path %}
+            <img src="https://image.tmdb.org/t/p/w200/{{ member.profile_path }}" alt="{{ member.name }}">
+            {% else %}
+            <img src="{{ url_for('static', filename='placeholder.png') }}" alt="Sin imagen">
+            {% endif %}
+            <div class="name">{{ member.name }}</div>
+            <div class="role">{{ member.job }}</div>
+        </div>
+        {% endfor %}
+
+        {% endif %}
+    </div>
+      
+    
+
+</body>
+</html>
+
