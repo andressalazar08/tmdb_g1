@@ -14,6 +14,7 @@ from routes.popular import popular_bp
 from routes.detalles_una_serie import detalles_una_serie_bp, detalles_una_serie_buscar_bp
 
 from routes.estrenos import estrenos_bp
+from routes.generos import generos_bp
 
 from routes.detalles import detalles_bp
 
@@ -57,12 +58,16 @@ app.register_blueprint(detalles_una_serie_bp)
 app.register_blueprint(detalles_una_serie_buscar_bp)
 
 app.register_blueprint(estrenos_bp)
+
+app.register_blueprint(generos_bp)
+
 app.register_blueprint(detalles_bp)
 
 
 app.register_blueprint(credits_bp)
 
 app.register_blueprint(detalles_una_serie_bp)
+
 
 app.register_blueprint(buscar_bp) # importo la ruta
 
