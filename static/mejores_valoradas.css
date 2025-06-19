@@ -1,7 +1,10 @@
 body{
     background-color: gray;
     font-family: sans-serif;
-
+    padding: 20px;
+    text-align: center;
+    margin:0px;
+    
 }
 
 
@@ -9,6 +12,7 @@ h1{
 
     color: rgba(34, 84, 177, 0.685);
     font-family:'Times New Roman', Times, serif; 
+    
 
 }
 
@@ -16,20 +20,54 @@ h2{
 
     color:darkcyan;
     font-family: 'Times New Roman', Times, serif;
-
-
+  
 }
 
 h3{
 
     color: aqua;        
-    font-family:'Times New Roman', Times, serif
-
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 1.1em;
 }
 
 h4{
     
     color: darkturquoise;
     font-family: 'Times New Roman', Times, serif;
+    
+}
 
+img{
+    border-radius: 8px;
+    width: 100px;
+    display: block;
+    height: auto;
+}
+
+.movie-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: center;
+
+}
+
+.movie-card{
+    padding: 16px;  
+    width: 200px;
+    border-radius: 12px;        
+    box-shadow: 0 4px 8px;
+
+}
+
+button{
+    display: block;
+    width: 500px;
+    height: auto;
+    padding: 50px;
+    border-radius: 20px;
+    color:darkgray;
+    background-color:dodgerblue;
+    font-size: 30px;
 }

@@ -11,6 +11,9 @@ popular_bp = Blueprint("popular", __name__)
 @popular_bp.route("/popular")
 def popular():
     url = f"https://api.themoviedb.org/3/movie/popular?api_key={API_KEY}&language=es-ES"
+    print(url)
     response = requests.get(url)
+    print(response)
     datos = response.json()["results"]
+    print(datos)
     return render_template("popular.html", datos=datos)
