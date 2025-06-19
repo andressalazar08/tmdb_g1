@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>próximos estrenos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estrenos.css') }}">
+</head>
+<body>
+    {% for pelicula in datos  %}
+<div class="container">
+
+        <div class="container-imagen">
+            <h1 class="pelicula"> {{ pelicula.title }}</h1>
+            <img src="https://image.tmdb.org/t/p/w200{{ pelicula.poster_path }}" alt="{{ pelicula.title }}">
+        </div>
+        <div class="container-textos">
+            <p class="titulo"> <span style="color: rgb(255, 102, 1);">Titulo: </span> {{pelicula.original_title}}</p>
+            <p class="descripcion"> <span style="color: rgb(255, 102, 0);"> Descripción: </span> {{pelicula.overview}}</p>
+            <p class="lenguaje"> <span style="color: rgb(255, 102, 0);"> Lenguaje: </span> {{pelicula.original_language}}</p>
+            <p class="fecha"> <span style="color: rgb(255, 102, 0);"> Fecha: </span> {{pelicula.release_date}}</p>
+            <p class="popularidad"> <span style="color: rgb(255, 102, 0);"> Popularidad: </span> {{pelicula.popularity}}</p>
+            
+        </div>
+</div>
+    {% endfor %}
+</body>
+</html>

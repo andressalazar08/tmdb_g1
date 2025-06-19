@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de peliculas por id</title>
+    <link rel="stylesheet" href="static/detalles.css">
+</head>
+<body>
+    <h1>BUSCAR DETALLES DE PELICULAS POR ID</h1>
+        <div class="container">
+            <div class="button-container"></div>
+                <form method="POST">
+                <input type="number" placeholder="Ingrese el id" name="id" required>
+                <button class="nav-button" type="submit">BUSCAR</button>
+            </div>
+        </div>
+    </form>
+<div class="datos-container">
+    {% if datos %}
+    <div class="container-title">
+        <span>{{datos.original_title}}</span>
+    </div>
+    <div class="container-img">
+        <img src="https://image.tmdb.org/t/p/w200{{ datos.poster_path }}" alt="datos">
+    </div>
+    <div class="container-generos">
+        {% for generos in datos.genres %}
+        <span>{{generos.name}}</span>
+        {% endfor %}
+    </div>
+    <div class="container-overview">
+        <span>{{datos.overview}}</span>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
