@@ -16,3 +16,5 @@ def modelo():
     response = requests.get(url)
     datos = response.json()["results"]
     return render_template("cartelera.html", datos=datos)
+
+

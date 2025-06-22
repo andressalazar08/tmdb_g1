@@ -1,35 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+	
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejemplo Vista Py</title>
-  <link rel="stylesheet" href="../estilos.css">
+    <meta charset="UTF-8">
+    <title>Cartelera</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
 </head>
 <body>
-
-	{{ datos }}
-  <div class="container">
-		<div class="header">
-			<h1>Peliculas en Cartelera</h1>
-		</div>
-		<div class="main">
-			<div class="slider">
-				<div class="ordenar">
-					<h2>Ordenar</h2>
-				</div>
-				<div class="ver">
-					<h2>Ver en: </h2>
-				</div>
-				<div class="filtros">
-					<h2>Filtros</h2>
-				</div>
+    <h1>Películas en Cartelera</h1>
+<div>
+	<div class="main">
+		<div class="slider">
+			<div class="ordenar">
+				<h2>Ordenar</h2>
 			</div>
-			<div class="peliculas">
-				{{cards}}
+			<div class="ver">
+				<h2>Ver en: </h2>
 			</div>
-		</div>
-	</div>
-  
+			<div class="filtros">
+				<h2>Filtros</h2>
+			
+				{% for pelicula in datos %}
+					<div style="margin-bottom: 20px;">
+						<h2>{{ pelicula.title }}</h2>
+						{% if pelicula.poster_path %}
+							<img src="https://image.tmdb.org/t/p/w500{{ pelicula.poster_path }}" alt="{{ pelicula.title }}" style="width:200px;">
+						{% else %}
+							<p>No hay imagen disponible.</p>
+						{% endif %}
+						<p>{{ pelicula.overview }}</p>
+					</div>
+				{% endfor %}
+			</div>
 </body>
 </html>

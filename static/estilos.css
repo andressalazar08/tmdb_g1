@@ -1,0 +1,58 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  background-color: white;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+}
+
+.header{
+  font-size: 1.2rem;
+  margin: 20px 0px 20px 0px;
+  padding-left: 12rem;
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+}
+
+.slider{
+  width: 20%;
+}
+
+.peliculas{
+  width: 60%;
+  display: grid;
+  grid-template-columns: 15% 15% 15% 15% 15%;
+  gap: 40px;
+}
+
+.card{
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.card > h2{
+  font-size: 1rem;
+  width: 100%;
+  font-weight: 600;
+  padding-top: 30px;
+}
+
+.card > p{
+  color: rgba(0, 0, 0, .6);
+  font-size: 1rem;
+}
+
+.card > img{
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
