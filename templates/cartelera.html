@@ -4,13 +4,129 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="../static/css/ejemplo.css">
+  <!-- Libreria de Iconos -->
+  <script src="https://kit.fontawesome.com/1f5cc51201.js" crossorigin="anonymous"></script>
 </head>
 <body>
-   <h1>Listado de Películas</h1>
-    <ul>
-        {% for peli in peliculas %}
-            <li>{{ peli }}</li>
-        {% endfor %}
-    </ul>
+  <header class="encabezado">
+    <nav>
+      <div class="logo">
+        <img src="../static/img/logo.svg" alt="Logo de la Empresa" width="154" height="20">
+				<ul>
+					<li>Peliculas</li>
+					<li>Series</li>
+					<li>Gente</li>
+					<li>Mas</li>
+				</ul>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><i class="fa-solid fa-plus"></i></li>
+          <li><button id="boton">ES</button></li>
+          <li>Iniciar sesión</li>
+          <li>Únete a TMDB</li>
+					<li><i class="fa-solid fa-magnifying-glass"></i></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+  <main>
+    <div class="container-main">
+      <div class="title">
+        <h2>Películas en cartelera</h2>
+      </div>
+      <div class="content">
+        <div class="filters">
+          <div class="card-filter">
+            <h3>Ordenar</h3>
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+          <div class="card-filter">
+            <h3>Donde se puede ver</h3>
+            <i class="fa-solid fa-angle-right"></i>
+          </div >
+          <div class="card-filter">
+            <h3>Filtros</h3>
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+          <div class="buscar">
+            <button>Buscar</button>
+          </div>
+        </div>
+        <div class="container-cards">
+          <div>
+            <section>
+
+              <!-- Card -->
+              {% for pelicula in peliculas %}
+                <article class="card">
+                  <div class="imagen">
+                    <div>
+                      <a href="#"><img src="https://image.tmdb.org/t/p/w500{{ pelicula.poster_path }}" alt=""></a>
+                    </div>
+                  </div>
+                  <div class="content-card">
+                    <h2>{{ pelicula.title   }}</h2>
+                    <p> {{  pelicula.release_date }}</p>
+                  </div>
+                </article>
+              {% endfor %}
+            </section>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+
+	<footer >
+		<div class="contenedor-footer">
+			<div class="footer-logo">
+				<img src="../static/img/footer.svg" alt="" width="130" height="94" id="">
+				<a href="">Unete a la comunidad</a>
+			</div>
+			<div class ="footer-links">
+				<h3>Lo básico</h3>
+				<ul>
+					<li>Sobre THDB</li>
+					<li>Contacto</li>
+					<li>Foros de ayuda</li>
+					<li>API Documentation</li>
+					<li>Estado del sistema</li>
+				</ul>
+
+			</div>
+			<div class ="footer-links">
+				<h3>Participa</h3>
+				<ul>
+					<li>Guia de operaciones</li>
+					<li>Añadir nueva pelicula</li>
+					<li>Añadir nueva serie</li>
+				</ul>
+			</div>
+			<div class ="footer-links">
+				<h3>comunidad</h3>
+				<ul>
+					<li>Directrices</li>
+					<li>Debates</li>
+					<li>Tabla de clasificacion</li>
+				</ul>
+			</div>
+			<div class ="footer-links">
+				<h3>Legal</h3>
+				<ul>
+					<li>Terminos de uso</li>
+					<li>Terminos de uso de la API</li>
+					<li>Politicas de privacidad</li>
+					<li>Politicas DMCA</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+  
 </body>
 </html>

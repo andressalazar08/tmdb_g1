@@ -1,0 +1,94 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.encabezado{
+  background-image: radial-gradient(at 30% top, #031d33 0%, rgba(3,37,65, 1) 70%);;
+  color: white;  
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo{
+  /* border: 1px solid red; */
+  font-size: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.logo img{
+  width: 300px;
+}
+
+#menu ul{
+  display: flex;
+  gap: 40px;
+  padding: 10px;
+  list-style: none;
+  font-size: 15px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+
+}
+
+#menu ul li{
+  padding: 10px;
+}
+
+#menu ul li:first-child{
+  padding: 10px 0px 10px 10px;
+}
+
+#menu ul li a{
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+#menu ul li a:hover{
+  background-color: red;
+  transition: 1s;
+  cursor: pointer;
+  transform: translateY(-10px);
+}
+
+main{
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+}
+
+.container-main{
+  border: 1px solid greenyellow;
+  max-width: 1400px;
+  color: black;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+}
+ .content{
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+ }
+
+ .filters{
+  border: 1px solid chocolate;
+ }
+
+ .container-cards{
+  border: 1px solid blue;
+ }
+
+
+
+
+
+
